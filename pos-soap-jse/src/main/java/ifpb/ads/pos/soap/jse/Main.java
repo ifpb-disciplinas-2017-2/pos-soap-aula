@@ -3,6 +3,7 @@ package ifpb.ads.pos.soap.jse;
 import br.edu.ifpb.service.News;
 import br.edu.ifpb.service.NewsSOAP;
 import br.edu.ifpb.service.NewsSOAPService;
+import java.util.concurrent.Future;
 
 /**
  * @author Ricardo Job
@@ -10,7 +11,7 @@ import br.edu.ifpb.service.NewsSOAPService;
  * @since 27/03/2018, 14:11:58
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         NewsSOAPService service = new NewsSOAPService();
         NewsSOAP newsSOAPPort = service.getNewsSOAPPort();
         
@@ -22,7 +23,10 @@ public class Main {
         
         newsSOAPPort.persist(news);
         
-        newsSOAPPort.all().stream()
-                .forEach(n->System.out.println(n.getTitle()));
+        newsSOAPPort.all()
+                .stream()
+                .forEach(
+                        n->System.out.println(n.getTitle())
+                );
     }
 }

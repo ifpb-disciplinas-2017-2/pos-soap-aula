@@ -18,6 +18,7 @@ public class NewsSOAP {
 
     @Oneway
     public void persist(News news) {
+        System.out.println(news);
         this.service.persist(news);
     }
 
