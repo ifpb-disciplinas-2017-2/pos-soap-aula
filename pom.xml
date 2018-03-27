@@ -9,6 +9,7 @@
     <modules>
         <module>pos-soap-jse</module>
         <module>pos-soap</module>
+        <module>pos-news</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
